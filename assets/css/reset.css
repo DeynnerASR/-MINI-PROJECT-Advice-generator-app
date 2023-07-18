@@ -88,8 +88,8 @@ blockquote:before, blockquote:after, q:before, q:after {
   color: var(--blanco);
 }
 ::selection {
-  background-color: var(--negro);
-  color: var(--blanco);
+  background-color: hsl(150, 100%, 66%);
+  color: black;
 }
 
 
