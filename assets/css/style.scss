@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
 $color-Light-Cyan : hsl(193, 38%, 86%);
 $color-Neon-Green: hsl(150, 100%, 66%);
 $color-Grayish-Blue: hsl(217, 19%, 38%);
@@ -12,15 +13,17 @@ $font-Manrope: 'Manrope', sans-serif;
     border-radius: .625rem;
     padding: 2.75rem 1.75rem;
     position: relative;
-
+    
     font-family: $font-Manrope;
+    text-align: center;
+    hyphens: none;
     
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     gap: 2.25rem;
 }
+
 @mixin diceBasicStyles(){
     background-color: $color-Neon-Green;
     position: absolute;
@@ -46,27 +49,54 @@ body{
         font-size: .6563em;
         letter-spacing: .1875rem;
     }
+
     .adviceText{
         color: $color-Light-Cyan;
         font-size: 1.5rem;
         line-height: 1.2;
     }
+
     .divider{
         width: 100%;
         height: auto;
     }
+
     .dice{
         @include diceBasicStyles();
         transition: all 0.5s;
-        &:hover{
+        &:hover , &:active{
             box-shadow: 0px 0px 15px hsl(150, 84%, 80%);
+            cursor: pointer;
         }
     }
 
     @media screen and (max-width:660px) {
         width: 20.875rem;
+
+        .dividerDesktop{
+                display: none;
+        }
     }
+
     @media screen and (min-width:660px){
         width: 33.75rem;
+                
+        .dividerMobile{
+            display: none;
+            
+        }
+    }
+}
+
+.attribution { 
+    display: flex;
+    gap: .125rem;
+    font-size: 11px; text-align: center;
+    position: fixed;
+    bottom: 0rem;
+    font-weight: bold;
+
+    a{
+        color: $color-Neon-Green; 
     }
 }
